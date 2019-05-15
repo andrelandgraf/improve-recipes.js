@@ -1,0 +1,11 @@
+{
+  "name": "improve-recipes",
+  "version": "1.0.0",
+  "description": "Pick substitutes for you recipies and get an insight about the improvement in healthyness",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andre Landgraf",
+  "license": "ISC"
+}

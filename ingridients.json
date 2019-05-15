@@ -1,0 +1,141 @@
+{
+    "potato": {
+        "id": 1,
+        "name": {
+            "de": "Kartoffel",
+            "en": "potato"
+        },
+        "category": "vegetable"
+    },
+    "corn": {
+        "id": 2,
+        "name": {
+            "de": "frischer Mais",
+            "en": "fresh corn"
+        },
+        "category": "vegetable",
+        "nutrition values": {
+            "calories": 86,
+            "fat": 1.2,
+            "cholesterol": 0,
+            "carbohydrates": {
+                "sum": 19,
+                "sugar": 3.2
+            },
+            "protein": 3.2,
+            "vitamine A": 1,
+            "vitamine C": 6.8,
+            "calcium": 2,
+            "magnesium": 37
+        }
+    },
+    "can corn": {
+        "id": 3,
+        "name": {
+            "de": "Dosenmais",
+            "en": "can corn"
+        },
+        "category": "vegetable",
+        "nutrition values": {
+            "fat": 1.9,
+            "carbohydrates": {
+                "sum": 11,
+                "sugar": 5.2
+            },
+            "protein": 2.9,
+            "salt": 0.4
+        }
+    },
+    "chicken filet": {
+        "id": 4,
+        "name": {
+            "de": "Dosenmais",
+            "en": "can corn"
+        },
+        "category": "meat"
+    },
+    "champignon": {
+        "id": 5,
+        "name": {
+            "de": "Champignon",
+            "en": "champignon"
+        },
+        "category": "vegetable"
+    },
+    "coconut milk": {
+        "id": 6,
+        "name": {
+            "de": "Kokusnusmilch",
+            "en": "coconut milk"
+        },
+        "category": "finished product",
+        "nutrition values": {
+            "calories": 230,
+            "fat": 24,
+            "cholesterol": 0,
+            "carbohydrates": {
+                "sum": 6,
+                "sugar": 3.3
+            },
+            "protein": 2.3,
+            "vitamine C": 2.8,
+            "calcium": 16,
+            "magnesium": 37
+        }
+    },
+    "garlic": {
+        "id": 7,
+        "name": {
+            "de": "Knoblauch",
+            "en": "garlic"
+        },
+        "category": "vegetable"
+    },
+    "white rice": {
+        "id": 8,
+        "name": {
+            "de": "weißer Reis",
+            "en": "white rice"
+        },
+        "category": "vegetable"
+    },
+    "coconut milk light": {
+        "id": 9,
+        "name": {
+            "de": "Kokusnusmilch light",
+            "en": "coconut milk light"
+        },
+        "category": "finished product",
+        "nutrition values": {
+            "fat": 5.7,
+            "carbohydrates": {
+                "sum": 1.1,
+                "sugar": 0.8
+            },
+            "protein": 0.5,
+            "salt": 0.2
+        }
+    },
+    "yogurt": {
+        "id": 10,
+        "name": {
+            "de": "Joghurt",
+            "en": "yogurt"
+        },
+        "category": "finished product",
+        "nutrition values": {
+            "calories": 59,
+            "fat": 0.4,
+            "cholesterol": 5,
+            "carbohydrates": {
+                "sum": 3.6,
+                "sugar": 3.6
+            },
+            "protein": 10,
+            "vitamine A": 410,
+            "vitamine B12": 0.8,
+            "calcium": 110,
+            "magnesium": 11
+        }
+    }
+}
