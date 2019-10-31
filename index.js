@@ -1,20 +1,20 @@
 const recipeFile = require('./recipe.json');
-const ingridients = require('./ingridients.json');
+const ingredients = require('./ingredients.json');
 
-function getIngridient( ingridientID ) {
-    const id = parseInt( ingridientID );
-    const key = Object.keys( ingridients ).find( key => ingridients[key].id === id );
-    return ingridients[key];
+function getIngredient( ingredientID ) {
+    const id = parseInt( ingredientID );
+    const key = Object.keys( ingredients ).find( key => ingredients[key].id === id );
+    return ingredients[key];
 }
 
 function getBestFatReduction( substitueOptions ) {
-    const tuples = substitueOptions.map( ingridientID => {
-        const ingridient = getIngridient( ingridientID );
-        if ( !ingridient[ 'nutrition values' ] || !ingridient[ 'nutrition values' ]['fat'] )
+    const tuples = substitueOptions.map( ingredientID => {
+        const ingredient = getIngredient( ingredientID );
+        if ( !ingredient[ 'nutrition values' ] || !ingredient[ 'nutrition values' ]['fat'] )
             return; 
         return {
-            substitueID: ingridientID,
-            value: ingridient[ 'nutrition values' ]['fat'],
+            substitueID: ingredientID,
+            value: ingredient[ 'nutrition values' ]['fat'],
         };
     } );
     let bestSubstitute = { substitueID: 0, value: Number.MAX_VALUE }
@@ -30,24 +30,24 @@ const substituteIDs = Object.keys( thaicurry.substitutes ).map( id => parseInt( 
 // reduce fat
 let fatSum = 0;
 const selectedSubstitutes = {};
-thaicurry.ingridients.forEach( ingridientID => {
-    const ingridient = getIngridient( ingridientID );
-    const lacksProperty = ( !ingridient[ 'nutrition values' ] || !ingridient[ 'nutrition values' ]['fat'] );
-    const ingridientFat = lacksProperty ? 0 : ingridient[ 'nutrition values' ]['fat'];
-    fatSum = fatSum + ingridientFat;
-    if ( substituteIDs.includes( ingridientID ) ) {
-        const substiteOptions = thaicurry.substitutes[ingridientID];
+thaicurry.ingredients.forEach( ingredientID => {
+    const ingredient = getIngredient( ingredientID );
+    const lacksProperty = ( !ingredient[ 'nutrition values' ] || !ingredient[ 'nutrition values' ]['fat'] );
+    const ingredientFat = lacksProperty ? 0 : ingredient[ 'nutrition values' ]['fat'];
+    fatSum = fatSum + ingredientFat;
+    if ( substituteIDs.includes( ingredientID ) ) {
+        const substiteOptions = thaicurry.substitutes[ingredientID];
         const bestFatSubstitute = getBestFatReduction( substiteOptions );
-        bestFatSubstitute.savedFat = ingridientFat - bestFatSubstitute.value;
+        bestFatSubstitute.savedFat = ingredientFat - bestFatSubstitute.value;
         if ( bestFatSubstitute.savedFat > 0 ) 
-        selectedSubstitutes[ingridientID] = bestFatSubstitute;
+        selectedSubstitutes[ingredientID] = bestFatSubstitute;
     }
 } );
 
 console.log( `Your normal meal contains ${fatSum} gram of fat` );
 Object.keys( selectedSubstitutes ).forEach( key => {
-    const old = getIngridient( key );
-    const better = getIngridient( selectedSubstitutes[key].substitueID );
+    const old = getIngredient( key );
+    const better = getIngredient( selectedSubstitutes[key].substitueID );
     const saved = selectedSubstitutes[key].savedFat;
     console.log( `Substitute ${old.name.en } by ${ better.name.en } to save ${saved} gram of fat` );
 } );
